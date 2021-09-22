@@ -1,5 +1,7 @@
 package com.smartinez.ciclo3back.models;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +32,7 @@ public class ProductoModel {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -38,7 +40,7 @@ public class ProductoModel {
     }
 
     public String getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
     public void setCodigo(String codigo) {
@@ -46,7 +48,7 @@ public class ProductoModel {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -54,11 +56,54 @@ public class ProductoModel {
     }
 
     public float getPrecio() {
-        return precio;
+        return this.precio;
     }
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public ProductoModel id(Long id) {
+        setId(id);
+        return this;
+    }
+
+    public ProductoModel codigo(String codigo) {
+        setCodigo(codigo);
+        return this;
+    }
+
+    public ProductoModel nombre(String nombre) {
+        setNombre(nombre);
+        return this;
+    }
+
+    public ProductoModel precio(float precio) {
+        setPrecio(precio);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof ProductoModel)) {
+            return false;
+        }
+        ProductoModel productoModel = (ProductoModel) o;
+        return Objects.equals(id, productoModel.id) && Objects.equals(codigo, productoModel.codigo)
+                && Objects.equals(nombre, productoModel.nombre) && precio == productoModel.precio;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, codigo, nombre, precio);
+    }
+
+    @Override
+    public String toString() {
+        return "{" + " id='" + getId() + "'" + ", codigo='" + getCodigo() + "'" + ", nombre='" + getNombre() + "'"
+                + ", precio='" + getPrecio() + "'" + "}";
     }
 
 }
