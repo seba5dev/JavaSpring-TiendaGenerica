@@ -3,8 +3,8 @@ package com.smartinez.ciclo3back.services;
 import java.util.Optional;
 import java.util.ArrayList;
 
-import com.smartinez.ciclo3back.models.ClienteModel;
-import com.smartinez.ciclo3back.repositories.ClienteRepository;
+import com.smartinez.ciclo3back.dao.UsuarioDAO;
+import com.smartinez.ciclo3back.models.UsuarioModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,21 +12,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClienteService {
     @Autowired
-    ClienteRepository clienteRepository;
+    UsuarioDAO clienteRepository;
 
     // CREATE, UPDATE
-    public ClienteModel guardarCliente(ClienteModel cliente) {
+    public UsuarioModel guardarCliente(UsuarioModel cliente) {
         return clienteRepository.save(cliente);
     }
 
     // READ
-    public Optional<ClienteModel> obtenerOptional(Long id) {
+    public Optional<UsuarioModel> obtenerOptional(Long id) {
         return clienteRepository.findById(id);
     }
 
     // LIST ALL
-    public ArrayList<ClienteModel> obtenerClientes() {
-        return (ArrayList<ClienteModel>) clienteRepository.findAll();
+    public ArrayList<UsuarioModel> obtenerClientes() {
+        return (ArrayList<UsuarioModel>) clienteRepository.findAll();
     }
 
     // DELETE

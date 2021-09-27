@@ -3,8 +3,8 @@ package com.smartinez.ciclo3back.services;
 import java.util.Optional;
 import java.util.ArrayList;
 
+import com.smartinez.ciclo3back.dao.VentaRepository;
 import com.smartinez.ciclo3back.models.VentaModel;
-import com.smartinez.ciclo3back.repositories.VentaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -3,8 +3,8 @@ package com.smartinez.ciclo3back.services;
 import java.util.Optional;
 import java.util.ArrayList;
 
+import com.smartinez.ciclo3back.dao.ProductoDAO;
 import com.smartinez.ciclo3back.models.ProductoModel;
-import com.smartinez.ciclo3back.repositories.ProductoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductoService {
     @Autowired
-    ProductoRepository ProductoRepository;
+    ProductoDAO ProductoRepository;
 
     // CREATE, UPDATE
     public ProductoModel guardarProducto(ProductoModel Producto) {

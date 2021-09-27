@@ -3,7 +3,7 @@ package com.smartinez.ciclo3back.controllers;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import com.smartinez.ciclo3back.models.ClienteModel;
+import com.smartinez.ciclo3back.models.UsuarioModel;
 import com.smartinez.ciclo3back.services.ClienteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +22,17 @@ public class ClienteController {
     ClienteService clienteService;
 
     @GetMapping
-    public ArrayList<ClienteModel> obtenerClientes() {
+    public ArrayList<UsuarioModel> obtenerClientes() {
         return clienteService.obtenerClientes();
     }
 
     @PostMapping
-    public ClienteModel crearCliente(@RequestBody ClienteModel cliente) {
+    public UsuarioModel crearCliente(@RequestBody UsuarioModel cliente) {
         return clienteService.guardarCliente(cliente);
     }
 
     @GetMapping(path = "{id}")
-    public Optional<ClienteModel> obtenerPorId(@PathVariable("id") Long id) {
+    public Optional<UsuarioModel> obtenerPorId(@PathVariable("id") Long id) {
         return clienteService.obtenerOptional(id);
     }
 

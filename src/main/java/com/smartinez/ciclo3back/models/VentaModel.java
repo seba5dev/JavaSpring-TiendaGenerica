@@ -22,7 +22,7 @@ public class VentaModel {
     private Long id;
 
     @ManyToOne
-    private ClienteModel cliente;
+    private UsuarioModel cliente;
 
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "venta_productos",
@@ -34,7 +34,7 @@ public class VentaModel {
     public VentaModel() {
     }
 
-    public VentaModel(Long id, ClienteModel cliente, List<ProductoModel> productos) {
+    public VentaModel(Long id, UsuarioModel cliente, List<ProductoModel> productos) {
         this.id = id;
         this.cliente = cliente;
         this.productos = productos;
@@ -48,11 +48,11 @@ public class VentaModel {
         this.id = id;
     }
 
-    public ClienteModel getCliente() {
+    public UsuarioModel getCliente() {
         return this.cliente;
     }
 
-    public void setCliente(ClienteModel cliente) {
+    public void setCliente(UsuarioModel cliente) {
         this.cliente = cliente;
     }
 
@@ -69,7 +69,7 @@ public class VentaModel {
         return this;
     }
 
-    public VentaModel cliente(ClienteModel cliente) {
+    public VentaModel cliente(UsuarioModel cliente) {
         setCliente(cliente);
         return this;
     }

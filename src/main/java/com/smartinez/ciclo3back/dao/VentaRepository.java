@@ -1,4 +1,4 @@
-package com.smartinez.ciclo3back.repositories;
+package com.smartinez.ciclo3back.dao;
 
 import com.smartinez.ciclo3back.models.VentaModel;
 
